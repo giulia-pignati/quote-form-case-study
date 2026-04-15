@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quote Form Redesign — Case Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       PROGRESS NAV (fixed, always on top)
+       ═══════════════════════════════════════ -->
+  <nav class="progress-nav" aria-label="Slide navigation">
+    <!-- Top row: project name + badge + clickable numbers -->
+    <div class="progress-nav__top">
+      <span class="progress-project">Quote Form Redesign</span>
+      <span class="progress-badge">Case Study</span>
+      <div class="progress-numbers" id="progress-numbers" aria-label="Jump to slide"></div>
+    </div>
+    <!-- Full-width progress bar below -->
+    <div class="nav-track" role="progressbar" aria-valuemin="1" aria-valuemax="14" aria-valuenow="1" aria-label="Presentation progress">
+      <div class="nav-fill"></div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+       SLIDES CONTAINER
+       ═══════════════════════════════════════ -->
+  <main class="slides">
+
+    <!-- ─── SLIDE 01 · HERO ─────────────────── -->
+    <section class="slide slide--hero" id="slide-1">
+      <div class="slide__inner">
+        <span class="slide-tag">Case Study</span>
+        <h1 class="hero-title">Quote Form<br>Redesign</h1>
+        <p class="hero-sub">Self-service insurance quotes for trucking</p>
+        <div class="tags">
+          <span class="tag">B2B SaaS</span>
+          <span class="tag">2024</span>
+          <span class="tag">User Experience Designer | Interaction Designer</span>
+        </div>
+      </div>
+      <span class="scroll-hint" aria-hidden="true">↓</span>
+    </section>
+
+    <!-- ─── SLIDE 02 · WHAT DOES IT DO ─────── -->
+    <section class="slide" id="slide-2">
+      <div class="slide__inner">
+        <span class="slide-tag">01 — Context</span>
+        <h2 class="slide-title">What does it do?</h2>
+        <p class="slide-intro">The quote form sat at the heart of the business: it was the first real interaction between potential customers and the company's core service.</p>
+        <div class="grid-2">
+          <div class="card">
+            <span class="card-label">Goal #1</span>
+            <p class="card-body">Focus producers' effort on qualified leads.</p>
+          </div>
+          <div class="card">
+            <span class="card-label">Goal #2</span>
+            <p class="card-body">Scaling efficiency through experience, not team size.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 03 · THE ORIGINAL FORM ────── -->
+    <section class="slide" id="slide-3">
+      <div class="slide__inner">
+        <span class="slide-tag">02 — Before Redesign</span>
+        <h2 class="slide-title">The original form</h2>
+        <p class="slide-intro">This is what users faced before the redesign — a long, ungrouped, desktop-only form with industry jargon and no inline guidance.</p>
+        <div class="img-frame">
+          <img
+            src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/old-form.png"
+            alt="Original quote form"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 04 · WHY DOES IT MATTER ───── -->
+    <section class="slide" id="slide-4">
+      <div class="slide__inner">
+        <span class="slide-tag">03 — Impact</span>
+        <h2 class="slide-title">Why does it matter</h2>
+        <p class="slide-intro">Expectation vs Reality</p>
+        <div class="grid-2">
+
+          <div class="card er-card">
+            <span class="er-label er-label--green">Expectation</span>
+            <ul class="er-list er-list--green">
+              <li>Fewer calls</li>
+              <li>Producers focus on qualified leads</li>
+            </ul>
+          </div>
+
+          <div class="card er-card">
+            <span class="er-label er-label--red">Reality</span>
+            <ul class="er-list er-list--red">
+              <li>High abandonment</li>
+              <li>Manual follow-ups</li>
+              <li>Validation calls due to data issues</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 05 · ROOT CAUSES ───────────── -->
+    <section class="slide" id="slide-5">
+      <div class="slide__inner">
+        <span class="slide-tag">04 — Research</span>
+        <h2 class="slide-title">What was causing the problem?</h2>
+        <div class="grid-2">
+
+          <div class="card">
+            <span class="card-icon-wrap" aria-hidden="true">
+              <!-- speech bubble / jargon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              </svg>
+            </span>
+            <h3 class="card-title">Jargon</h3>
+            <p class="card-body">Confusing terms led to incorrect inputs or missing info.</p>
+          </div>
+
+          <div class="card">
+            <span class="card-icon-wrap" aria-hidden="true">
+              <!-- arrows / length -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="3" x2="12" y2="21"/>
+                <polyline points="6 9 12 3 18 9"/>
+                <polyline points="6 15 12 21 18 15"/>
+              </svg>
+            </span>
+            <h3 class="card-title">Length</h3>
+            <p class="card-body">The form was too long and overwhelming.</p>
+          </div>
+
+          <div class="card">
+            <span class="card-icon-wrap" aria-hidden="true">
+              <!-- 2×2 grid / grouping -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3"  y="3"  width="7" height="7" rx="1"/>
+                <rect x="14" y="3"  width="7" height="7" rx="1"/>
+                <rect x="3"  y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
+              </svg>
+            </span>
+            <h3 class="card-title">Grouping</h3>
+            <p class="card-body">Questions weren't grouped in an intuitive way.</p>
+          </div>
+
+          <div class="card">
+            <span class="card-icon-wrap" aria-hidden="true">
+              <!-- smartphone / responsiveness -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <circle cx="12" cy="18" r="0.5" fill="currentColor"/>
+              </svg>
+            </span>
+            <h3 class="card-title">Responsiveness</h3>
+            <p class="card-body">Over 60% of users attempted to access a non-responsive form on their phones.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 06 · QUOTE ─────────────────── -->
+    <section class="slide slide--quote" id="slide-6">
+      <div class="slide__inner slide__inner--center">
+        <blockquote class="quote-text">
+          The self-service idea was right —<br>
+          the form had to earn it.
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 07 · HOW WE LEARNED ────────── -->
+    <section class="slide" id="slide-7">
+      <div class="slide__inner">
+        <span class="slide-tag">05 — Approach</span>
+        <h2 class="slide-title">How we learned</h2>
+        <p class="slide-intro">Evidence that justified the redesign — not guesswork.</p>
+        <div class="grid-4">
+          <div class="card">
+            <span class="card-label">Field</span>
+            <h3 class="card-title">Producer shadowing</h3>
+            <p class="card-body">Concord, North Carolina, USA</p>
+          </div>
+          <div class="card">
+            <span class="card-label">Process</span>
+            <h3 class="card-title">Interviews + mapping</h3>
+            <p class="card-body">End-to-end quote flow</p>
+          </div>
+          <div class="card">
+            <span class="card-label">Quant</span>
+            <h3 class="card-title">Hotjar + analytics</h3>
+            <p class="card-body">Drop-offs &amp; confusion</p>
+          </div>
+          <div class="card">
+            <span class="card-label">Qual</span>
+            <h3 class="card-title">Call recordings</h3>
+            <p class="card-body">Real customer struggles</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 08 · TWO OPTIONS ───────────── -->
+    <section class="slide" id="slide-8">
+      <div class="slide__inner">
+        <span class="slide-tag">06 — Strategy</span>
+        <h2 class="slide-title">Two options</h2>
+        <div class="grid-2">
+          <div class="pillar-card">
+            <span class="pillar-num">01</span>
+            <h3>Education & Engagement</h3>
+            <p>Help people understand before they commit answers.</p>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-num">02</span>
+            <h3>Form IA & Interaction</h3>
+            <p>Structure, validation, and progressive disclosure.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 09 · MOBILE-FIRST (solution-card layout) -->
+    <section class="slide slide--solution" id="slide-9">
+      <div class="slide__inner">
+        <span class="slide-tag">07 — Solution</span>
+        <h2 class="slide-title">Mobile-first</h2>
+
+        <div class="solution-card">
+          <!-- LEFT: single static item with description -->
+          <div class="solution-nav">
+            <div class="solution-item is-active solution-item--static">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Designed for the smallest screen first</strong>
+                <p class="solution-item__desc">Over 60% of users accessed the form from their phones. Instead of treating mobile as an afterthought, we designed for it first and scaled up to desktop.</p>
+                <p class="solution-item__desc">This constraint forced cleaner decisions: one concept per screen, large touch targets, visible progress, and a clear sense of forward motion.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: mobile image -->
+          <div class="solution-display">
+            <div class="solution-panel is-active" id="mob-1">
+              <img
+                src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/mobile.png"
+                alt="Mobile-first screens"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 10 · INFORMATION ARCHITECTURE (interactive) -->
+    <section class="slide slide--solution" id="slide-10">
+      <div class="slide__inner">
+        <span class="slide-tag">08 — Solution</span>
+        <h2 class="slide-title">Information Architecture</h2>
+
+        <div class="solution-card">
+          <!-- LEFT: clickable items -->
+          <nav class="solution-nav" aria-label="IA features">
+            <button class="solution-item is-active" data-target="ia-1">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Grouping Sections</strong>
+                <span>Business Info / Equipment / Drivers / Coverages</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="ia-2">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>No Scrolling</strong>
+                <span>Break the form into smaller, digestible steps</span>
+              </div>
+            </button>
+          </nav>
+
+          <!-- RIGHT: image panels -->
+          <div class="solution-display">
+            <div class="solution-panel is-active" id="ia-1">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/group.png"
+                   alt="Grouping Sections" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="ia-2">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/no-scroll.png"
+                   alt="No Scrolling" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 11 · SMART & CLEAR (interactive) -->
+    <section class="slide slide--solution" id="slide-11">
+      <div class="slide__inner">
+        <span class="slide-tag">09 — Solution</span>
+        <h2 class="slide-title">Smart &amp; clear</h2>
+
+        <div class="solution-card">
+          <!-- LEFT -->
+          <nav class="solution-nav" aria-label="Smart & clear features">
+            <button class="solution-item is-active" data-target="sc-1">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Smart Components</strong>
+                <span>Context-aware inputs that adapt to user choices</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="sc-2">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Conditional Questions</strong>
+                <span>Show only relevant fields based on prior answers</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="sc-3">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Validation before Continue</strong>
+                <span>Inline errors prevent bad data before step changes</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="sc-4">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Plain Language</strong>
+                <span>Insurance jargon replaced with clear, human terms</span>
+              </div>
+            </button>
+          </nav>
+
+          <!-- RIGHT -->
+          <div class="solution-display">
+            <div class="solution-panel is-active" id="sc-1">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/smart-component.png"
+                   alt="Smart Components" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="sc-2">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/conditionals.png"
+                   alt="Conditional Questions" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="sc-3">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/validation.png"
+                   alt="Validation before Continue" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="sc-4">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/plain.png"
+                   alt="Plain Language" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 12 · SYSTEM & DATA (interactive) -->
+    <section class="slide slide--solution" id="slide-12">
+      <div class="slide__inner">
+        <span class="slide-tag">10 — Solution</span>
+        <h2 class="slide-title">System &amp; Data</h2>
+
+        <div class="solution-card">
+          <!-- LEFT -->
+          <nav class="solution-nav" aria-label="System & Data features">
+            <button class="solution-item is-active" data-target="sd-1">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Personalization</strong>
+                <span>DOT / entity / VIN-aware options</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="sd-2">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Compliance Prefill</strong>
+                <span>Business fields populated from identifiers</span>
+              </div>
+            </button>
+            <button class="solution-item" data-target="sd-3">
+              <span class="solution-arrow" aria-hidden="true">→</span>
+              <div>
+                <strong>Maps</strong>
+                <span>Address autocomplete to reduce input errors</span>
+              </div>
+            </button>
+          </nav>
+
+          <!-- RIGHT -->
+          <div class="solution-display">
+            <div class="solution-panel is-active" id="sd-1">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/perso.png"
+                   alt="Personalization" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="sd-2">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/prefill.png"
+                   alt="Compliance Prefill" loading="lazy" />
+            </div>
+            <div class="solution-panel" id="sd-3">
+              <img src="https://raw.githubusercontent.com/giulia-pignati/portfolio/main/images/map.png"
+                   alt="Maps" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 13 · OUTCOMES ──────────────── -->
+    <section class="slide" id="slide-13">
+      <div class="slide__inner">
+        <span class="slide-tag">11 — Impact</span>
+        <h2 class="slide-title">Outcomes</h2>
+        <div class="metrics">
+          <div class="metric">
+            <span class="metric-val positive">+89%</span>
+            <span class="metric-lbl">Self-service completion</span>
+            <span class="metric-bar">
+              <span class="metric-fill" data-width="86"></span>
+            </span>
+          </div>
+          <div class="metric">
+            <span class="metric-val positive">+35%</span>
+            <span class="metric-lbl">Overall quote efficiency</span>
+            <span class="metric-bar">
+              <span class="metric-fill" data-width="35"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── SLIDE 14 · FOOTER ─────────────────── -->
+    <section class="slide slide--footer" id="slide-14">
+      <div class="slide__inner slide__inner--center">
+        <p class="footer-quote">
+          Strong ideas need execution.<br>
+          Empathy + evidence = impact.
+        </p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Portfolio</a>
+          <a href="#" class="footer-link">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
